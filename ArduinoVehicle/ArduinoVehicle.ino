@@ -15,6 +15,8 @@ int enb = 10; //controll
 //for saving last character got via Bluetooth, in ASCII code
 byte lastCharFromBT = -1;
 
+const byte MAX_PWM_SPEED = 255;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -48,37 +50,41 @@ void move() {
   switch ((char)lastCharFromBT) {
     case '1':
       Serial.println("Forward");
-      forwardAll(255);
+      forwardAll(MAX_PWM_SPEED);
       break;
 
     case '2':
       Serial.println("Backward");
-      backwardAll(255);
+      backwardAll(MAX_PWM_SPEED);
       break;
 
     case '3':
       Serial.println("Forward Left");
-      forwardLeft(255);
+      forwardLeft(MAX_PWM_SPEED);
+      brakeRight(MAX_PWM_SPEED);
       break;
 
     case '4':
       Serial.println("Forward Right");
-      forwardRight(255);
+      forwardRight(MAX_PWM_SPEED);
+      brakeLeft(MAX_PWM_SPEED);
       break;
 
     case '5':
       Serial.println("Backward Left");
-      backwardLeft(255);
+      backwardLeft(MAX_PWM_SPEED);
+      brakeRight(MAX_PWM_SPEED);
       break;
 
     case '6':
       Serial.println("Backward Right");
-      backwardRight(255);
+      backwardRight(MAX_PWM_SPEED);
+      brakeLeft(MAX_PWM_SPEED);
       break;
 
     case '9':
       Serial.println("Brake");
-      brakeAll(255);
+      brakeAll(MAX_PWM_SPEED);
       break;
 
     default:
