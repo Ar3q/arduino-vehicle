@@ -94,14 +94,14 @@ void move() {
 
 void forwardRight(byte speedPWM) {
   analogWrite(ena, speedPWM);
-  digitalWrite(n1, HIGH);
-  digitalWrite(n2, LOW);
+  digitalWrite(n3, LOW);
+  digitalWrite(n4, HIGH);
 }
 
 void forwardLeft(byte speedPWM) {
   analogWrite(enb, speedPWM);
-  digitalWrite(n3, LOW);
-  digitalWrite(n4, HIGH);
+  digitalWrite(n1, HIGH);
+  digitalWrite(n2, LOW);
 }
 
 void forwardAll(byte speedPWM) {
@@ -111,14 +111,14 @@ void forwardAll(byte speedPWM) {
 
 void backwardRight(byte speedPWM) {
   analogWrite(ena, speedPWM);
-  digitalWrite(n1, LOW);
-  digitalWrite(n2, HIGH);
+  digitalWrite(n3, HIGH);
+  digitalWrite(n4, LOW);
 }
 
 void backwardLeft(byte speedPWM) {
   analogWrite(enb, speedPWM);
-  digitalWrite(n3, HIGH);
-  digitalWrite(n4, LOW);
+  digitalWrite(n1, LOW);
+  digitalWrite(n2, HIGH);
 }
 
 void backwardAll(byte speedPWM) {
@@ -128,14 +128,14 @@ void backwardAll(byte speedPWM) {
 
 void brakeRight(byte speedPWM) {
   analogWrite(ena, speedPWM);
-  digitalWrite(n1, LOW);
-  digitalWrite(n2, LOW);
+  digitalWrite(n3, LOW);
+  digitalWrite(n4, LOW);
 }
 
 void brakeLeft(byte speedPWM) {
   analogWrite(enb, speedPWM);
-  digitalWrite(n3, LOW);
-  digitalWrite(n4, LOW);
+  digitalWrite(n1, LOW);
+  digitalWrite(n2, LOW);
 }
 
 void brakeAll(byte speedPWM) {
